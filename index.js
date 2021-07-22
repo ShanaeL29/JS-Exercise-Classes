@@ -42,8 +42,36 @@ class Airplane {
 */
 
 class Person {
-  
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+    this.stomach = []
+  }
+  eat(someFood) {
+    if (this.stomach.length < 10) {
+      this.stomach.push(someFood);
+      return this.stomach
+    }
+  }
+  poop() {
+    this.stomach = [];
+    return this.stomach
+  }
+  toString() {
+    return `${this.name}, ${this.age}`;
+  }
 }
+
+const name = new Person("Shanae", 29);
+
+console.log("task 1:", name);
+console.log("task 1:", name.eat("pizza"));
+console.log("task 1:", name.poop());
+console.log("task 1:", name.toString());
+
+
+
+
 
 /*
   TASK 2
@@ -60,7 +88,13 @@ class Person {
 */
 
 class Car {
-  
+  constructor(model, milesPerGallon) {
+    this.tank = 0;
+    this.odometer = 0;
+  }
+  fill(gallons) {
+
+  }
 }
 
 /*
@@ -76,7 +110,14 @@ class Car {
         + {name} and {location} of course come from the instance's own properties.
 */
 class Lambdasian {
-  
+  constructor(attributes) {
+    this.name = attributes.name;
+    this.age = attributes.age;
+    this.location = attributes.location;
+  }
+  speak() {
+    return `Hello my name is`
+  }
 }
 
 /*
@@ -112,7 +153,7 @@ class Instructor {
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
 class Student {
-   
+
 }
 
 /*
@@ -129,7 +170,7 @@ class Student {
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
 class ProjectManager {
-   
+
 }
 /*
   STRETCH PROBLEM (no tests!)
@@ -143,7 +184,7 @@ class ProjectManager {
 
 //End of Challenge
 /* 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 */
-function foo(){
+function foo() {
   return 'bar';
 }
 
