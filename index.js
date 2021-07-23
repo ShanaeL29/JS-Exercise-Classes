@@ -145,21 +145,21 @@ const newObj = new Lambdasian({
   location: "Kansas"
 });
 
-console.log(newObj);
-console.log(newObj.speak());
+console.log("task 3", newObj);
+console.log("task 3", newObj.speak());
 
 
 /*
   TASK 4
     - Write an Instructor class extending Lambdasian.
     - Its constructor takes a single argument - an object with the following keys:
-        + All the keys used to initialize instances of Lambdasian.
-        + `specialty`: what the instance of Instructor is good at, i.e. 'redux'
-        + `favLanguage`: i.e. 'JavaScript, Python, Elm etc.'
-        + `catchPhrase`: i.e. `Don't forget the homies`.
-    - The constructor calls the parent constructor passing it what it needs.
+        + All the keys used to initialize instances of Lambdasian.//keys that parent has
+        + `specialty`: what the instance of Instructor is good at, i.e. 'redux'//----
+        + `favLanguage`: i.e. 'JavaScript, Python, Elm etc.'//----------------------keys child has that Parent does NOT
+        + `catchPhrase`: i.e. `Don't forget the homies`.//------------------------
+    - The constructor calls the parent constructor passing it what it needs.//this is super
     - The constructor should also initialize `specialty`, `favLanguage` and `catchPhrase` properties on the instance.
-    - Instructor instances have the following methods:
+    - Instructor instances have the following methods: //these are the prototype functions. Since we are now using class we can feed them directly into the constructor function ONLY because we are now using class.
         + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
@@ -174,7 +174,7 @@ class Instructor extends Lambdasian {
     return `Today we are learning about ${subject}`;
   }
   grade(student, subject) {
-    return `${student.name} receives a perfect score on ${subject}`
+    return `${student.name} receives a perfect score on ${subject}`;
   }
 }
 
@@ -187,10 +187,10 @@ const simone = new Instructor({
   catchPhrase: "Don't forget the homies"
 });
 
-console.log(simone);
-console.log(simone.speak());
-console.log(simone.demo("Math"));
-console.log(simone.grade(simone, "Math"));
+console.log("task 4:", simone);
+console.log("task 4:", simone.speak());
+console.log("task 4:", simone.demo("Math"));
+console.log("task 4:", simone.grade(simone, "Math"));
 
 
 /*
@@ -236,11 +236,11 @@ const student = new Student({
   favSubjects: ["HTML", "CSS", "JS"]
 });
 
-console.log(student);
-console.log(student.speak());
-console.log(student.listSubjects());
-console.log(student.PRAssignment("Javascript"));
-console.log(student.sprintChallenge("CS"));
+console.log("task 5:", student);
+console.log("task 5:", student.speak());
+console.log("task 5:", student.listSubjects());
+console.log("task 5:", student.PRAssignment("Javascript"));
+console.log("task 5:", student.sprintChallenge("CS"));
 
 
 
@@ -264,17 +264,15 @@ class ProjectManager extends Instructor {
     this.favInstructor = pManagerAttributes.favInstructor;
   }
   standUp(channel) {
-    return `${this.name} announces to ${channel}, @channel standy times!`
+    return `${this.name} announces to ${channel}, @channel standy times!`;
   }
   debugsCode(student, subject) {
-    return `${this.name} debugs ${student.name}'s code on ${subject}`
+    return `${this.name} debugs ${student.name}'s code on ${subject}`;
   }
 }
 
 
 const andy = new ProjectManager({
-
-
   name: "Andy",
   age: 40,
   location: "Texas",
@@ -289,12 +287,12 @@ const stud = ({
   name: "James"
 });
 
-console.log(andy);
-console.log(andy.speak());
-console.log(andy.demo("Math"));
-console.log(andy.grade(andy, "Math"));
-console.log(andy.standUp("hired"))
-console.log(andy.debugsCode(stud, "HTML"));
+console.log("task 6:", andy);
+console.log("task 6:", andy.speak());
+console.log("task 6:", andy.demo("Math"));
+console.log("task 6:", andy.grade(andy, "Math"));
+console.log("task 6:", andy.standUp("hired"))
+console.log("task 6:", andy.debugsCode(stud, "HTML"));
 
 
 
